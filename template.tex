@@ -1,0 +1,63 @@
+\documentclass{article}
+\usepackage{xcolor}
+
+\usepackage{listings} % for code block
+\usepackage{titlesec} % for customizing titles
+
+\usepackage{fancyhdr} % for fancy headers on top of the page
+
+\pagestyle{fancy}
+
+\fancyhf{} % Clear default header/footer
+
+\fancyhead[L]{\textit{\leftmark}} % Top left header with main header title
+\fancyhead[R]{\thepage} % Top right header with page number
+
+% For listing bullets
+\providecommand{\tightlist}{
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+% defining theme for codeblocks
+\definecolor{codebg}{HTML}{1E1E1E}
+\definecolor{keyword}{HTML}{569CD6}
+\definecolor{comment}{HTML}{6A9955}
+\definecolor{string}{HTML}{CE9178}
+\definecolor{normal}{HTML}{D4D4D4}
+
+% defining theme for the page
+\definecolor{headercolor}{HTML}{cc0000}
+\definecolor{subheadercolor}{HTML}{00cc00}
+\definecolor{subsubheadercolor}{HTML}{0000cc}
+\definecolor{paragraph}{HTML}{cccc00}
+\definecolor{subparagraph}{HTML}{00cccc}
+
+% generating the titles based on the theme
+\titleformat{\section}{\color{headercolor}\Large\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}{\color{subheadercolor}\large\bfseries}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}{\color{subsubheadercolor}\large\bfseries}{\thesubsubsection}{1em}{}
+\titleformat{\paragraph}{\color{paragraph}\large\bfseries}{\theparagraph}{1em}{}
+\titleformat{\subparagraph}{\color{subparagraph}\large\bfseries}{\thesubparagraph}{1em}{}
+
+% setting up code block according to theme
+\lstset{
+    language=c++,
+    basicstyle=\small\sffamily,
+    numbers=left,
+    numberstyle=\tiny,
+    frame=tb,
+    tabsize=4,
+    columns=fixed,
+    showstringspaces=false,
+    showtabs=false,
+    keepspaces,
+    stringstyle=\color{string},
+    commentstyle=\color{comment},
+    keywordstyle=\color{keyword},
+    basicstyle=\color{normal},
+    backgroundcolor=\color{codebg}
+}
+
+% template
+\begin{document}
+    $body$
+\end{document}
