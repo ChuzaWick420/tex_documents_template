@@ -7,6 +7,7 @@
 \usepackage{titlesec} % for titles
 \usepackage{fancyhdr} % for fancy headers on top of the page
 \usepackage{fontspec} % for fonts
+\usepackage{hyperref} % for hyper links
 
 % defining theme for codeblocks
 \definecolor{CODEBLOCKBACKGROUNDCOLOR}{HTML}{1E1E1E}
@@ -22,7 +23,21 @@
 \definecolor{PARAGRAPHCOLOR}{HTML}{cccc00}
 \definecolor{SUBPARAGRAPHCOLOR}{HTML}{00cccc}
 
+% defining theme for page
+\definecolor{PAGECOLOR}{HTML}{181818}
+\definecolor{TEXTCOLOR}{HTML}{e9e9e9}
+
 \setmonofont{Cascadia Mono}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=linkcolor,
+  urlcolor=linkcolor,
+  filecolor=linkcolor
+}
+
+\pagecolor{PAGECOLOR}
+\color{TEXTCOLOR}
 
 % setting up code block according to theme
 \lstset{
