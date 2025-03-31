@@ -19,13 +19,12 @@ You may edit the following variables to change color scheme.
 
 ## Usage
 The `<output>` can be `*.pdf` or `*.tex`.
-
-> [!CAUTION]
-> For the images, use `xelatex` engines. The other engines like `pdflatex` does not handle images effectively.
-
 ```bash
 pandoc "input.md" -o <output> --template=template.tex --pdf-engine=xelatex
 ```
+
+> [!CAUTION]
+> For the images, use `xelatex` engine. The other engines like `pdflatex` will fail.
 
 ## Screenshots
 ![img_1](assets/ss_1.png)
