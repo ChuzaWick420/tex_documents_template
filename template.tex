@@ -3,11 +3,12 @@
 \usepackage{amsmath}  % for math structures e.g. cases, matrices
 \usepackage{graphicx} % for images
 \usepackage{xcolor}   % for defining colors
-\usepackage{listings} % for code block
 \usepackage{titlesec} % for titles
 \usepackage{fancyhdr} % for fancy headers on top of the page
-\usepackage{fontspec} % for fonts
 \usepackage{hyperref} % for hyper links
+\usepackage{unicode-math} % this also loads fontspec
+\usepackage{fancyvrb} % for defining a custom verbatim environment, i.e. Highlighting
+\usepackage{lmodern} % for font
 
 % defining theme for codeblocks
 % \definecolor{CODEBLOCKBACKGROUNDCOLOR}{HTML}{1E1E1E}
@@ -27,8 +28,6 @@
 \definecolor{PAGECOLOR}{HTML}{181818}
 \definecolor{TEXTCOLOR}{HTML}{e9e9e9}
 
-\setmonofont{Cascadia Mono}
-
 \hypersetup{
   colorlinks=true,
   linkcolor=linkcolor,
@@ -40,23 +39,39 @@
 \color{TEXTCOLOR}
 
 % setting up code block according to theme
-\lstset{
-    % language=c++,
-    basicstyle=\small\tffamily,
-    numbers=left,
-    numberstyle=\tiny,
-    frame=tb,
-    tabsize=4,
-    columns=fixed,
-    showstringspaces=false,
-    showtabs=false,
-    keepspaces,
-    stringstyle=\color{STRINGCOLOR},
-    commentstyle=\color{COMMENTCOLOR},
-    keywordstyle=\color{KEYWORDCOLOR},
-    basicstyle=\color{NORMALTEXTCOLOR},
-    backgroundcolor=\color{PAGECOLOR}
-}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+\newenvironment{Shaded}{}{}
+\newcommand{\AlertTok}[1]         {\textcolor[rgb]{1.00,0.00,0.00}{\textbf{#1}}}
+\newcommand{\AnnotationTok}[1]    {\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]     {\textcolor[rgb]{0.06, 1.00, 0.65}{\textit{#1}}}
+\newcommand{\BaseNTok}[1]         {\textcolor[rgb]{0.25,0.63,0.44}{#1}}
+\newcommand{\BuiltInTok}[1]       {\textcolor[rgb]{0.47, 0.63, 0.97}{#1}}
+\newcommand{\CharTok}[1]          {\textcolor[rgb]{0.25,0.44,0.63}{#1}}
+\newcommand{\CommentTok}[1]       {\textcolor[rgb]{1.00, 0.86, 0.31}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]    {\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]      {\textcolor[rgb]{0.53,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]   {\textcolor[rgb]{0.97, 0.46, 0.55}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]      {\textcolor[rgb]{0.15, 0.63, 0.72}{#1}}
+\newcommand{\DecValTok}[1]        {\textcolor[rgb]{1.00, 0.61, 0.39}{#1}}
+\newcommand{\DocumentationTok}[1] {\textcolor[rgb]{0.73,0.13,0.13}{\textit{#1}}}
+\newcommand{\ErrorTok}[1]         {\textcolor[rgb]{1.00,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]     {#1}
+\newcommand{\FloatTok}[1]         {\textcolor[rgb]{1.00, 0.61, 0.39}{#1}}
+\newcommand{\FunctionTok}[1]      {\textcolor[rgb]{0.02,0.16,0.49}{#1}}
+\newcommand{\ImportTok}[1]        {\textcolor[rgb]{0.61, 0.80, 0.41}{\textbf{#1}}}
+\newcommand{\InformationTok}[1]   {\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]       {\textcolor[rgb]{0.73, 0.60, 0.97}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]        {#1}
+\newcommand{\OperatorTok}[1]      {\textcolor[rgb]{0.54, 0.86, 1.00}{#1}}
+\newcommand{\OtherTok}[1]         {\textcolor[rgb]{0.00,0.44,0.13}{#1}}
+\newcommand{\PreprocessorTok}[1]  {\textcolor[rgb]{0.47, 0.63, 0.97}{\textbf{\textit{#1}}}}
+\newcommand{\RegionMarkerTok}[1]  {#1}
+\newcommand{\SpecialCharTok}[1]   {\textcolor[rgb]{0.25,0.44,0.63}{\textit{#1}}}
+\newcommand{\SpecialStringTok}[1] {\textcolor[rgb]{0.73,0.40,0.53}{\textit{#1}}}
+\newcommand{\StringTok}[1]        {\textcolor[rgb]{0.61, 0.80, 0.41}{#1}}
+\newcommand{\VariableTok}[1]      {\textcolor[rgb]{0.10,0.09,0.49}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
+\newcommand{\WarningTok}[1]       {\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
 
 \pagestyle{fancy}
 
@@ -66,14 +81,20 @@
 \fancyhead[R]{\thepage} % Top right header with page number
 
 % For images
-\newcommand
-    {\pandocbounded}[1] % new command: pandocbounded which takes 1 argument (the block element, e.g. img)
-    {
-        \resizebox      % resize
-        {\textwidth}    % x dimension (textwidth)
-        {!}             % y dimension (! for maintaining aspect ratio)
-        {#1}            % pass the argument to be resized
-    }
+\makeatletter
+\newsavebox\pandoc@box
+\newcommand*\pandocbounded[1]{% scales image to fit in text height/width
+  \sbox\pandoc@box{#1}%
+  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
+  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
+  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi% select the smaller of both
+  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
+  \else\usebox{\pandoc@box}%
+  \fi%
+}
+% Set default figure placement to htbp
+\def\fps@figure{htbp}
+\makeatother
 
 % For listing bullets
 \providecommand{\tightlist}{

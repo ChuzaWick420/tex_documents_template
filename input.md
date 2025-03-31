@@ -34,9 +34,28 @@ void foo(const char* target) {
     std::cout << target << std::endl;
 }
 
+enum Test1 {
+    HI = -1,
+    BYE
+} test;
+
+typedef struct {
+    int* num_ptr = nullptr;
+    char character = '\0';
+} Test2;
+
 int main () {
     int x = 420;
     float y = 6.9f;
+
+    // random comment
+    if(x > 100)
+        return -1;
+
+    switch(x) {
+        
+    }
+
     const char* str = "Hello World";
 
     printf("%d\n", x);
@@ -54,3 +73,9 @@ int main () {
 
 # Images
 ![Dragon](assets/dragon.png)
+
+<!--## Tables-->
+<!---->
+<!--|Heading 1|Heading 2|-->
+<!--|---|---|-->
+<!--|value 1| value 2|-->

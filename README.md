@@ -28,7 +28,7 @@ The `<output>` can be `*.pdf` or `*.tex`.
 > For the images, use `xelatex` engines. The other engines like `pdflatex` does not handle images effectively.
 
 ```bash
-pandoc "input.md" -o <output> --template=template.tex --pdf-engine=xelatex --listings
+pandoc "input.md" -o <output> --template=template.tex --pdf-engine=xelatex
 ```
 
 ## Screenshots
