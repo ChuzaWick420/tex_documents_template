@@ -3,10 +3,6 @@ This project is just a template for generating documents according to my persona
 You may edit the following variables to change color scheme.
 
 ## Control parameters
-- `KEYWORDCOLOR`
-- `COMMENTCOLOR`
-- `STRINGCOLOR`
-- `NORMALTEXTCOLOR`
 - `SECTIONCOLOR`
 - `SUBSECTIONCOLOR`
 - `SUBSUBSECTIONCOLOR`
