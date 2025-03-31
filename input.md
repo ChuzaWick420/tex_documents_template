@@ -1,9 +1,9 @@
 # Headings
-# Heading A
-## Heading B
-### Heading C
-#### Heading D
-##### Heading E
+# Section
+## SubSection
+### SubSubSection
+#### Paragraph
+##### Subparagraph
 
 # Ordered list
 1. Item 1
@@ -17,7 +17,13 @@
 
 # Math
 Inline code such as $\int_a^b f(x) dx$ and also block level one
-$$\int_a^b f(x)dx$$
+$$
+g(x) = 
+\begin{cases}
+    {\frac{\partial}{\partial x}} f(x) \\
+    \int_a^b f(x) dx
+\end{cases}
+$$
 
 # Code block
 ```cpp
@@ -46,5 +52,5 @@ int main () {
 - _italic_
 - **Bold**
 
-<!--# Images-->
-<!--![Dragon](assets/dragon.png)-->
+# Images
+![Dragon](assets/dragon.png)

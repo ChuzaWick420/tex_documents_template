@@ -1,47 +1,33 @@
 \documentclass{article}
-\usepackage{xcolor}
 
+\usepackage{amsmath}  % for math structures e.g. cases, matrices
+\usepackage{graphicx} % for images
+\usepackage{xcolor}   % for defining colors
 \usepackage{listings} % for code block
-\usepackage{titlesec} % for customizing titles
-
+\usepackage{titlesec} % for titles
 \usepackage{fancyhdr} % for fancy headers on top of the page
-
-\pagestyle{fancy}
-
-\fancyhf{} % Clear default header/footer
-
-\fancyhead[L]{\textit{\leftmark}} % Top left header with main header title
-\fancyhead[R]{\thepage} % Top right header with page number
-
-% For listing bullets
-\providecommand{\tightlist}{
-  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\usepackage{fontspec} % for fonts
 
 % defining theme for codeblocks
-\definecolor{codebg}{HTML}{1E1E1E}
-\definecolor{keyword}{HTML}{569CD6}
-\definecolor{comment}{HTML}{6A9955}
-\definecolor{string}{HTML}{CE9178}
-\definecolor{normal}{HTML}{D4D4D4}
+\definecolor{CODEBLOCKBACKGROUNDCOLOR}{HTML}{1E1E1E}
+\definecolor{KEYWORDCOLOR}{HTML}{569CD6}
+\definecolor{COMMENTCOLOR}{HTML}{6A9955}
+\definecolor{STRINGCOLOR}{HTML}{CE9178}
+\definecolor{NORMALTEXTCOLOR}{HTML}{D4D4D4}
 
 % defining theme for the page
-\definecolor{headercolor}{HTML}{cc0000}
-\definecolor{subheadercolor}{HTML}{00cc00}
-\definecolor{subsubheadercolor}{HTML}{0000cc}
-\definecolor{paragraph}{HTML}{cccc00}
-\definecolor{subparagraph}{HTML}{00cccc}
+\definecolor{SECTIONCOLOR}{HTML}{cc0000}
+\definecolor{SUBSECTIONCOLOR}{HTML}{00cc00}
+\definecolor{SUBSUBSECTIONCOLOR}{HTML}{0000cc}
+\definecolor{PARAGRAPHCOLOR}{HTML}{cccc00}
+\definecolor{SUBPARAGRAPHCOLOR}{HTML}{00cccc}
 
-% generating the titles based on the theme
-\titleformat{\section}{\color{headercolor}\Large\bfseries}{\thesection}{1em}{}
-\titleformat{\subsection}{\color{subheadercolor}\large\bfseries}{\thesubsection}{1em}{}
-\titleformat{\subsubsection}{\color{subsubheadercolor}\large\bfseries}{\thesubsubsection}{1em}{}
-\titleformat{\paragraph}{\color{paragraph}\large\bfseries}{\theparagraph}{1em}{}
-\titleformat{\subparagraph}{\color{subparagraph}\large\bfseries}{\thesubparagraph}{1em}{}
+\setmonofont{Cascadia Mono}
 
 % setting up code block according to theme
 \lstset{
-    language=c++,
-    basicstyle=\small\sffamily,
+    % language=c++,
+    basicstyle=\small\tffamily,
     numbers=left,
     numberstyle=\tiny,
     frame=tb,
@@ -50,12 +36,41 @@
     showstringspaces=false,
     showtabs=false,
     keepspaces,
-    stringstyle=\color{string},
-    commentstyle=\color{comment},
-    keywordstyle=\color{keyword},
-    basicstyle=\color{normal},
-    backgroundcolor=\color{codebg}
+    stringstyle=\color{STRINGCOLOR},
+    commentstyle=\color{COMMENTCOLOR},
+    keywordstyle=\color{KEYWORDCOLOR},
+    basicstyle=\color{NORMALTEXTCOLOR},
+    backgroundcolor=\color{CODEBLOCKBACKGROUNDCOLOR}
 }
+
+\pagestyle{fancy}
+
+\fancyhf{} % Clear default header/footer
+
+\fancyhead[L]{\textit{\leftmark}} % Top left header with main header title
+\fancyhead[R]{\thepage} % Top right header with page number
+
+% For images
+\newcommand
+    {\pandocbounded}[1] % new command: pandocbounded which takes 1 argument (the block element, e.g. img)
+    {
+        \resizebox      % resize
+        {\textwidth}    % x dimension (textwidth)
+        {!}             % y dimension (! for maintaining aspect ratio)
+        {#1}            % pass the argument to be resized
+    }
+
+% For listing bullets
+\providecommand{\tightlist}{
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+% generating the titles based on the theme
+\titleformat{\section}       {\color{SECTIONCOLOR}\Large\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}    {\color{SUBSECTIONCOLOR}\large\bfseries}{\thesubsection}{1em}{}
+\titleformat{\subsubsection} {\color{SUBSUBSECTIONCOLOR}\large\bfseries}{\thesubsubsection}{1em}{}
+\titleformat{\paragraph}     {\color{PARAGRAPHCOLOR}\large\bfseries}{\theparagraph}{1em}{}
+\titleformat{\subparagraph}  {\color{SUBPARAGRAPHCOLOR}\large\bfseries}{\thesubparagraph}{1em}{}
+
 
 % template
 \begin{document}
