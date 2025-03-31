@@ -15,14 +15,13 @@ You may edit the following variables to change color scheme.
 - `PAGECOLOR`
 - `TEXTCOLOR`
 
-## Pre-requirements
+## Prerequisites
 - [Pandoc](https://pandoc.org/installing.html)
 - A TeX distribution (either of the following)
     - [TeX live](https://www.tug.org/texlive/)
     - [MiKTeX](https://miktex.org/)
 
 ## Usage
-
 The `<output>` can be `*.pdf` or `*.tex`.
 
 > [!CAUTION]
@@ -31,6 +30,7 @@ The `<output>` can be `*.pdf` or `*.tex`.
 ```bash
 pandoc "input.md" -o <output> --template=template.tex --pdf-engine=xelatex --listings
 ```
+
 ## Screenshots
 ![img_1](assets/ss_1.png)
 ![img_2](assets/ss_2.png)
