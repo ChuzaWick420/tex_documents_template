@@ -1,21 +1,23 @@
 \documentclass{article}
 
-\usepackage{amsmath}  % for math structures e.g. cases, matrices
-\usepackage{graphicx} % for images
-\usepackage{xcolor}   % for defining colors
-\usepackage{titlesec} % for titles
-\usepackage{fancyhdr} % for fancy headers on top of the page
-\usepackage{hyperref} % for hyper links
+\usepackage{amsmath}      % for math structures e.g. cases, matrices
+\usepackage{float}        % for H float
+\usepackage{graphicx}     % for images
+\usepackage{xcolor}       % for defining colors
+\usepackage{titlesec}     % for titles
+\usepackage{fancyhdr}     % for fancy headers on top of the page
+\usepackage{hyperref}     % for hyper links
 \usepackage{unicode-math} % this also loads fontspec
-\usepackage{fancyvrb} % for defining a custom verbatim environment, i.e. Highlighting
-\usepackage{lmodern} % for font
+\usepackage{fancyvrb}     % for defining a custom verbatim environment, i.e. Highlighting
+\usepackage{lmodern}      % for font
+\usepackage{longtable}
+\usepackage{booktabs}     % for tables
+\usepackage{array}        % for tables
+\usepackage{footnote}     % for footnotes
 
-% defining theme for codeblocks
-% \definecolor{CODEBLOCKBACKGROUNDCOLOR}{HTML}{1E1E1E}
-\definecolor{KEYWORDCOLOR}{HTML}{569CD6}
-\definecolor{COMMENTCOLOR}{HTML}{6A9955}
-\definecolor{STRINGCOLOR}{HTML}{CE9178}
-\definecolor{NORMALTEXTCOLOR}{HTML}{D4D4D4}
+\makeatletter
+  \patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
 
 % defining theme for the page
 \definecolor{SECTIONCOLOR}{HTML}{30bcff}
@@ -27,6 +29,8 @@
 % defining theme for page
 \definecolor{PAGECOLOR}{HTML}{181818}
 \definecolor{TEXTCOLOR}{HTML}{e9e9e9}
+
+\definecolor{linkcolor}{HTML}{30bcff}
 
 \hypersetup{
   colorlinks=true,
@@ -93,7 +97,7 @@
   \fi%
 }
 % Set default figure placement to htbp
-\def\fps@figure{htbp}
+\def\fps@figure{H}
 \makeatother
 
 % For listing bullets
