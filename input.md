@@ -53,7 +53,17 @@ int main () {
         return -1;
 
     switch(x) {
-        
+        case 10:
+            do_something();
+            break;
+
+        case 20:
+            do_something_else();
+            break;
+
+        default:
+            do_nothing();
+            break;
     }
 
     const char* str = "Hello World";
@@ -72,10 +82,13 @@ int main () {
 - **Bold**
 
 # Images
+Image starts being funny without this text
+
 ![Dragon](assets/dragon.png)
 
-<!--## Tables-->
-<!---->
-<!--|Heading 1|Heading 2|-->
-<!--|---|---|-->
-<!--|value 1| value 2|-->
+# Tables
+|Heading 1|Heading 2|
+|---|---|
+|value 1[^1]| value 2|
+
+[^1]: My [notes](https://chuzawick420.github.io/notes_publisher/).
