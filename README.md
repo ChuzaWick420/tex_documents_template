@@ -10,6 +10,7 @@ You may edit the following variables to change color scheme.
 - `SUBPARAGRAPHCOLOR`
 - `PAGECOLOR`
 - `TEXTCOLOR`
+- `linkcolor`
 
 ## Prerequisites
 - [Pandoc](https://pandoc.org/installing.html)
@@ -30,3 +31,7 @@ pandoc "input.md" -o <output> --template=template.tex --pdf-engine=xelatex
 ![img_1](assets/ss_1.png)
 ![img_2](assets/ss_2.png)
 ![img_3](assets/ss_3.png)
+![img_4](assets/ss_4.png)
+![img_5](assets/ss_5.png)
+![img_6](assets/ss_6.png)
+![img_7](assets/ss_7.png)
