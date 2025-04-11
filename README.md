@@ -3,14 +3,48 @@ This project is just a template for generating documents according to my persona
 You may edit the following variables to change color scheme.
 
 ## Control parameters
-- `SECTIONCOLOR`
-- `SUBSECTIONCOLOR`
-- `SUBSUBSECTIONCOLOR`
-- `PARAGRAPHCOLOR`
-- `SUBPARAGRAPHCOLOR`
-- `PAGECOLOR`
-- `TEXTCOLOR`
-- `linkcolor`
+
+
+<details>
+    <summary>Code Blocks</summary>
+    <ul>
+        <li><code>PreprocessorColor</code></li>
+        <li><code>ImportedColor</code></li>
+        <li><code>DataTypeColor</code></li>
+        <li><code>NormalColor</code></li>
+        <li><code>OperatorColor</code></li>
+        <li><code>AttributeColor</code></li>
+        <li><code>BuiltinColor</code></li>
+        <li><code>KeywordColor</code></li>
+        <li><code>DecimalColor</code></li>
+        <li><code>FloatColor</code></li>
+        <li><code>CharColor</code></li>
+        <li><code>SpecialCharColor</code></li>
+        <li><code>CommentColor</code></li>
+        <li><code>ControlFlowColor</code></li>
+        <li><code>StringColor</code></li>
+    </ul>
+</details>
+
+<details>
+    <summary>Headings</summary>
+    <ul>
+        <li><code>SectionColor</code></li>
+        <li><code>SubSectionColor</code></li>
+        <li><code>SubSubSectionColor</code></li>
+        <li><code>ParagraphColor</code></li>
+        <li><code>SubParagraphColor</code></li>
+    </ul>
+</details>
+
+<details>
+    <summary>Miscellaneous</summary>
+    <ul>
+        <li><code>PageColor</code></li>
+        <li><code>TextColor</code></li>
+        <li><code>linkcolor</code></li>
+    </ul>
+</details>
 
 ## Prerequisites
 - [Pandoc](https://pandoc.org/installing.html)
