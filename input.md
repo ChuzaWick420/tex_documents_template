@@ -17,13 +17,11 @@
 
 # Math
 Inline code such as $\int_a^b f(x) dx$ and also block level one
-$$
-g(x) = 
+$$g(x) = 
 \begin{cases}
     {\frac{\partial}{\partial x}} f(x) \\
     \int_a^b f(x) dx
-\end{cases}
-$$
+\end{cases}$$
 
 # Code block
 ```cpp
