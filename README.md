@@ -61,11 +61,57 @@ pandoc "input.md" -o <output> --template=template.tex --pdf-engine=xelatex
 > [!CAUTION]
 > For the images, use `xelatex` engine. The other engines like `pdflatex` will fail.
 
-## Screenshots
-![img_1](assets/ss_1.png)
-![img_2](assets/ss_2.png)
-![img_3](assets/ss_3.png)
-![img_4](assets/ss_4.png)
-![img_5](assets/ss_5.png)
-![img_6](assets/ss_6.png)
-![img_7](assets/ss_7.png)
+## Features
+
+- [Colored Headings](#colored-headings)
+- [Lists](#lists)
+    - [Ordered](#ordered)
+    - [Unordered](#unordered)
+- [Math](#math)
+- [Text formatting](#text-formatting)
+- [Tables and References](#tables-and-references)
+- [Images](#images)
+- [Code Blocks](#code-blocks)
+- [Footnotes and Hyperlinks](#footnotes-and-hyperlinks)
+- [Page Headers](#page-headers)
+
+### Colored Headings
+
+![](./assets/colored_headings.png)
+
+### Lists
+#### Ordered
+
+![](./assets/ordered_list.png)
+
+#### unordered
+
+![](./assets/unordered_list.png)
+
+### Math
+
+![](./assets/math.png)
+
+### Text formatting
+
+![](./assets/text_formatting.png)
+
+### Tables and References
+
+![](./assets/tables.png)
+
+### Images
+
+![](./assets/images.png)
+
+### Code Blocks
+
+![](./assets/code_block.png)
+
+### Footnotes and hyperlinks
+
+![](./assets/footnote.png)
+
+### Page headers
+
+![](./assets/page_header.png)
