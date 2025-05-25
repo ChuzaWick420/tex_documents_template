@@ -78,6 +78,7 @@ int main () {
 # Text formatting
 - _italic_
 - **Bold**
+- ~~strike through~~
 
 # Images
 Image starts being funny without this text
