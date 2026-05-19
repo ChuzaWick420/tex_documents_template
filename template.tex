@@ -1,21 +1,22 @@
 \documentclass{article}
 
-\usepackage{amssymb}      % for squares
-\usepackage{amsmath}      % for math structures e.g. cases, matrices
-\usepackage{soul}         % for strike through i.e. st
-\usepackage{float}        % for H float
-\usepackage{graphicx}     % for images
-\usepackage{xcolor}       % for defining colors
-\usepackage{titlesec}     % for titles
-\usepackage{fancyhdr}     % for fancy headers on top of the page
-\usepackage{hyperref}     % for hyper links
-\usepackage{unicode-math} % this also loads fontspec
-\usepackage{fancyvrb}     % for defining a custom verbatim environment, i.e. Highlighting
-\usepackage{lmodern}      % for font
+\usepackage{amssymb}                  % for symbols e.g. square
+\usepackage{amsmath}                  % for math structures e.g. cases, matrices
+\usepackage{soul}                     % for strike through i.e. st
+\usepackage{float}                    % for H float
+\usepackage{graphicx}                 % for images
+\usepackage{xcolor}                   % for defining colors
+\usepackage{titlesec}                 % for titles
+\usepackage{fancyhdr}                 % for fancy headers on top of the page
+\usepackage{hyperref}                 % for hyper links
+\usepackage{unicode-math}             % this also loads fontspec
+\usepackage{fancyvrb}                 % for defining a custom verbatim environment, i.e. Highlighting
+\usepackage{lmodern}                  % for font
 \usepackage{longtable}
-\usepackage{booktabs}     % for tables
-\usepackage{array}        % for tables
-\usepackage{footnote}     % for footnotes
+\usepackage{booktabs}                 % for tables
+\usepackage{array}                    % for tables
+\usepackage{footnote}                 % for footnotes
+\usepackage[margin=1in]{geometry}     % margins
 
 \makeatletter
   \patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
