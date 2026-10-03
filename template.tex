@@ -1,5 +1,6 @@
 \documentclass{article}
 
+\usepackage{calc}                     % for wide tables
 \usepackage{amssymb}                  % for symbols e.g. square
 \usepackage{amsmath}                  % for math structures e.g. cases, matrices
 \usepackage{soul}                     % for strike through i.e. st
@@ -16,6 +17,7 @@
 \usepackage{booktabs}                 % for tables
 \usepackage{array}                    % for tables
 \usepackage{footnote}                 % for footnotes
+\usepackage{tikz}                     % for graphics
 \usepackage[margin=1in]{geometry}     % margins
 
 \makeatletter
@@ -95,6 +97,15 @@
 \newcommand{\VariableTok}[1]      {\textcolor[rgb]{0.10,0.09,0.49}{#1}}
 \newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
 \newcommand{\WarningTok}[1]       {\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
+
+% My custom commands
+\newcommand{\colorcircle}[1]{
+  % \tikz[baseline=-0.6ex]\fill[#1] (0,0) circle (0.7ex);
+  \begin{tikzpicture}
+    \definecolor{pic_color}{HTML}{#1}
+    \fill[pic_color] (0, -0.2) circle (0.1);
+  \end{tikzpicture}
+}
 
 \pagestyle{fancy}
 
